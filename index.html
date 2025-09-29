@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: https:; connect-src 'self' https:; frame-src 'none'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';" />
+    
+    <!-- 微信和移动端兼容性优化 -->
+    <meta name="description" content="JT工时管理系统 - 专业的企业工时记录和管理平台" />
+    <meta name="keywords" content="工时管理,时间记录,企业管理,JT" />
+    <meta name="author" content="吉林省通用机械（集团）有限责任公司" />
+    <meta name="application-name" content="JT工时管理系统" />
+    <meta name="msapplication-tooltip" content="JT工时管理系统" />
+    <meta name="apple-mobile-web-app-title" content="JT工时管理" />
+    
+    <!-- 微信分享优化 -->
+    <meta property="og:title" content="JT工时管理系统" />
+    <meta property="og:description" content="专业的企业工时记录和管理平台" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="JT工时管理系统" />
+    <!-- DNS预解析优化 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- 移动网络优化 -->
+    <meta http-equiv="Cache-Control" content="public, max-age=300" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta name="format-detection" content="telephone=no, email=no, address=no" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="x5-page-mode" content="app" />
+    <meta name="browsermode" content="application" />
+    <meta name="wap-font-scale" content="no" />
+    <title>工时管理系统</title>
+
+  </head>
+  <body>
+    <div id="root"></div>
+    
+    <!-- 微信环境检测和适配脚本 -->
+    <script>
+      // 安全策略已在HTML meta标签中静态设置
+      
+      // 微信环境检测
+      function isWechat() {
+        return /micromessenger/i.test(navigator.userAgent);
+      }
+      
+      // 微信小程序环境检测
+      function isMiniProgram() {
+        return window.__wxjs_environment === 'miniprogram' || 
+               /miniprogram/i.test(navigator.userAgent);
+      }
+      
+      // 移动端检测
+      function isMobile() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      }
+      
+      // 设置环境标识
+      if (isWechat()) {
+        document.body.classList.add('wechat-env');
+      }
+      if (isMiniProgram()) {
+        document.body.classList.add('miniprogram-env');
+      }
+      if (isMobile()) {
+        document.body.classList.add('mobile-env');
+      }
+      
+      // 微信小程序通信接口
+      window.miniProgramUtils = {
+        // 向小程序发送消息
+        postMessage: function(data) {
+          if (typeof wx !== 'undefined' && wx.miniProgram) {
+            wx.miniProgram.postMessage({ data: data });
+          }
+        },
+        // 导航回小程序
+        navigateBack: function() {
+          if (typeof wx !== 'undefined' && wx.miniProgram) {
+            wx.miniProgram.navigateBack();
+          }
+        },
+        // 获取环境信息
+        getEnv: function(callback) {
+          if (typeof wx !== 'undefined' && wx.miniProgram) {
+            wx.miniProgram.getEnv(callback);
+          } else {
+            callback({ miniprogram: false });
+          }
+        }
+      };
+      
+      // 防止页面缩放
+      document.addEventListener('touchstart', function(event) {
+        if (event.touches.length > 1) {
+          event.preventDefault();
+        }
+      });
+      
+      var lastTouchEnd = 0;
+      document.addEventListener('touchend', function(event) {
+        var now = (new Date()).getTime();
+        if (now - lastTouchEnd <= 300) {
+          event.preventDefault();
+        }
+        lastTouchEnd = now;
+      }, false);
+    </script>
+    
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,128 @@
+/**webview.wxss**/
+.webview-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: #f8f9fa;
+}
+
+.webview {
+  width: 100%;
+  height: 100%;
+}
+
+/* 加载状态样式 */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.loading-spinner {
+  width: 60rpx;
+  height: 60rpx;
+  border: 6rpx solid #e3e3e3;
+  border-top: 6rpx solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 40rpx;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+  font-size: 28rpx;
+  color: #666;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* 错误状态样式 */
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 40rpx;
+  background-color: #f8f9fa;
+}
+
+.error-icon {
+  font-size: 120rpx;
+  margin-bottom: 40rpx;
+}
+
+.error-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20rpx;
+  text-align: center;
+}
+
+.error-message {
+  font-size: 28rpx;
+  color: #666;
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 60rpx;
+  max-width: 600rpx;
+}
+
+.btn {
+  width: 300rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+  border: none;
+  text-align: center;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 4rpx 16rpx rgba(102, 126, 234, 0.3);
+}
+
+.btn-secondary {
+  background-color: white;
+  color: #667eea;
+  border: 2rpx solid #667eea;
+}
+
+.btn:active {
+  transform: translateY(2rpx);
+  opacity: 0.8;
+}
+
+/* 适配不同屏幕尺寸 */
+@media screen and (max-width: 750rpx) {
+  .error {
+    padding: 20rpx;
+  }
+  
+  .error-message {
+    font-size: 26rpx;
+    max-width: 500rpx;
+  }
+  
+  .btn {
+    width: 280rpx;
+    font-size: 26rpx;
+  }
+}
+
+/* 安全区域适配 */
+.webview-container {
+  padding-bottom: env(safe-area-inset-bottom);
+}

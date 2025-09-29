@@ -1,0 +1,49 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="header">
+    <image class="logo" src="/images/logo.png" mode="aspectFit"></image>
+    <view class="title">JT工时管理系统</view>
+    <view class="subtitle">专业的企业工时记录和管理平台</view>
+  </view>
+  
+  <view class="card">
+    <view class="card-title">功能介绍</view>
+    <view class="feature-list">
+      <view class="feature-item">
+        <view class="feature-icon">⏰</view>
+        <view class="feature-text">工时记录</view>
+      </view>
+      <view class="feature-item">
+        <view class="feature-icon">📊</view>
+        <view class="feature-text">数据统计</view>
+      </view>
+      <view class="feature-item">
+        <view class="feature-icon">✅</view>
+        <view class="feature-text">审批流程</view>
+      </view>
+      <view class="feature-item">
+        <view class="feature-icon">👥</view>
+        <view class="feature-text">团队管理</view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="action-buttons">
+    <button class="btn btn-primary" bindtap="goToTimesheet">进入工时管理</button>
+    <button class="btn btn-secondary" bindtap="getUserInfo">获取用户信息</button>
+  </view>
+  
+  <view class="user-info" wx:if="{{userInfo}}">
+    <view class="card">
+      <view class="card-title">用户信息</view>
+      <view class="user-avatar">
+        <image src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
+      </view>
+      <view class="user-name">{{userInfo.nickName}}</view>
+    </view>
+  </view>
+  
+  <view class="tips">
+    <view class="text">提示：首次使用需要授权登录</view>
+  </view>
+</view>

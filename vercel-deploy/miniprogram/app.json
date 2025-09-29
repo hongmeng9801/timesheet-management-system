@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/webview/webview"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "JT工时管理",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f8f9fa",
+    "enablePullDownRefresh": false,
+    "onReachBottomDistance": 50,
+    "pageOrientation": "portrait",
+    "restartStrategy": "homePage"
+  },
+  "lazyCodeLoading": "requiredComponents",
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "useExtendedLib": {
+    "weui": true
+  },
+  "darkmode": false,
+  "themeLocation": "theme.json",
+  "renderer": "webview",
+  "componentFramework": "glass-easel",
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/icon_home.png",
+        "selectedIconPath": "images/icon_home_selected.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/webview/webview",
+        "iconPath": "images/icon_work.png",
+        "selectedIconPath": "images/icon_work_selected.png",
+        "text": "工时管理"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false,
+  "navigateToMiniProgramAppIdList": [],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "requiredBackgroundModes": [],
+  "plugins": {},
+  "resizable": true
+}

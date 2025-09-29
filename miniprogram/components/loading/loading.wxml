@@ -1,0 +1,35 @@
+<!--加载组件模板-->
+<view class="loading-container {{customClass}}" wx:if="{{visible}}">
+  <!-- 遮罩层 -->
+  <view 
+    class="loading-mask" 
+    wx:if="{{mask}}"
+    style="background-color: rgba(0, 0, 0, {{maskOpacity}})"
+    bindtap="onMaskTap"
+  ></view>
+  
+  <!-- 加载内容 -->
+  <view class="loading-content">
+    <!-- Spinner 加载动画 -->
+    <view class="loading-spinner loading-{{size}}" wx:if="{{type === 'spinner'}}">
+      <view class="spinner-border"></view>
+    </view>
+    
+    <!-- Dots 加载动画 -->
+    <view class="loading-dots loading-{{size}}" wx:if="{{type === 'dots'}}">
+      <view class="dot dot1"></view>
+      <view class="dot dot2"></view>
+      <view class="dot dot3"></view>
+    </view>
+    
+    <!-- Pulse 加载动画 -->
+    <view class="loading-pulse loading-{{size}}" wx:if="{{type === 'pulse'}}">
+      <view class="pulse-circle"></view>
+    </view>
+    
+    <!-- 加载文本 -->
+    <view class="loading-text" wx:if="{{text}}">
+      {{text}}
+    </view>
+  </view>
+</view>

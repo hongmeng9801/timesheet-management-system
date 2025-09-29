@@ -1,0 +1,6 @@
+{
+  "watch": ["src"],
+  "ext": "ts,tsx,js,jsx",
+  "ignore": ["dist", "node_modules"],
+  "exec": "echo 'Backend service not needed - using Supabase'"
+}

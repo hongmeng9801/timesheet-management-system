@@ -1,0 +1,153 @@
+{
+  "appid": "your_miniprogram_appid",
+  "projectname": "工时管理小程序",
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": false,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "lazyloadPlaceholderEnable": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "enableEngineNative": false,
+    "useIsolateContext": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "disableUseStrict": false,
+    "minifyWXML": true,
+    "showES6CompileOption": false,
+    "useCompilerPlugins": false,
+    "ignoreUploadUnusedFiles": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.19.4",
+  "appid": "your_miniprogram_appid",
+  "projectname": "工时管理小程序",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "scripts": {},
+  "staticServerOptions": {
+    "baseURL": "",
+    "servePath": ""
+  },
+  "isGameTourist": false,
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "plugin": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "首页",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "工时管理",
+          "pathName": "pages/webview/webview",
+          "query": "url=https://timesheet.yourdomain.com",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "version": {
+    "version": "1.0.0",
+    "desc": "工时管理小程序首个版本，支持H5页面嵌入和微信授权登录"
+  },
+  "upload": {
+    "ignore": [
+      "node_modules/**/*",
+      ".git/**/*",
+      ".gitignore",
+      "README.md",
+      "*.log",
+      "*.md",
+      "deploy.config.js",
+      "publish.config.json",
+      "domain-whitelist.md"
+    ]
+  },
+  "privacy": {
+    "requiredPrivateInfos": [
+      {
+        "type": "Location",
+        "desc": "用于考勤打卡定位功能"
+      },
+      {
+        "type": "UserInfo",
+        "desc": "用于用户身份识别和个性化服务"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userInfo": {
+      "desc": "用于获取用户基本信息，提供个性化服务"
+    },
+    "scope.userLocation": {
+      "desc": "用于考勤打卡时获取用户位置信息"
+    }
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000,
+    "uploadFile": 10000,
+    "connectSocket": 10000
+  },
+  "functionalPages": false,
+  "requiredBackgroundModes": [],
+  "plugins": {},
+  "resizable": false,
+  "navigateToMiniProgramAppIdList": [],
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "useExtendedLib": {},
+  "entranceDeclare": {
+    "locationMessage": {
+      "path": "pages/webview/webview",
+      "query": "scene=location"
+    }
+  },
+  "darkmode": false,
+  "themeLocation": "",
+  "lazyCodeLoading": "requiredComponents",
+  "singlePage": {
+    "navigationBarFit": "squeezed"
+  }
+}

@@ -1,0 +1,27 @@
+<!--webview.wxml-->
+<view class="webview-container">
+  <!-- 加载状态 -->
+  <view class="loading" wx:if="{{loading}}">
+    <view class="loading-spinner"></view>
+    <view class="loading-text">正在加载工时管理系统...</view>
+  </view>
+  
+  <!-- 错误状态 -->
+  <view class="error" wx:if="{{error}}">
+    <view class="error-icon">⚠️</view>
+    <view class="error-title">加载失败</view>
+    <view class="error-message">{{errorMessage}}</view>
+    <button class="btn btn-primary" bindtap="reload">重新加载</button>
+    <button class="btn btn-secondary" bindtap="goBack">返回首页</button>
+  </view>
+  
+  <!-- WebView组件 -->
+  <web-view 
+    wx:if="{{!loading && !error}}"
+    src="{{webviewUrl}}"
+    bindmessage="onMessage"
+    bindload="onWebViewLoad"
+    binderror="onError"
+    class="webview">
+  </web-view>
+</view>
